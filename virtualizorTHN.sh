@@ -1,5 +1,5 @@
 #!/bin/bash
-yum install php -y
+#yum install php -y
 chattr -i /usr/local/virtualizor/license.php
 rm -rf /usr/local/virtualizor/license.php 
 php_cwd=`/usr/bin/php << EOF
