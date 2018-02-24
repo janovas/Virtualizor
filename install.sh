@@ -7,7 +7,8 @@ setenforce 0 >> /dev/null 2>&1
 #iptables -F >> /dev/null 2>&1
 #iptables -P INPUT ACCEPT >> /dev/null 2>&1
 
-FILEREPO=http://files.virtualizor.com
+#FILEREPO=http://files.virtualizor.com
+FILEREPO=https://raw.githubusercontent.com/janovas/Virtualizor/master
 LOG=/root/virtualizor.log
 
 #----------------------------------
