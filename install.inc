@@ -1311,13 +1311,13 @@ if(preg_match('/release 7/is', $release) && (!preg_match('/kvm/is', $args['kerne
 }
 
 // Download the Package
-shell_exec('cd /root; wget -O latest.zip "http://www.virtualizor.com/updates.php?install=true&version=latest'.(!empty($args['beta']) ? '&beta=1' : '').'" >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; wget -O 2.8.0.zip "http://files.virtualizor.com/2.8.0.zip'.(!empty($args['beta']) ? '&beta=1' : '').'" >> '.$args['log'].' 2>&1');
 
 // Unzip the Package
-shell_exec('cd /root; unzip -o latest.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; unzip -o 2.8.0.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
 
 // Remove the Package
-shell_exec('cd /root; /bin/rm -rf latest.zip >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; /bin/rm -rf 2.8.0.zip >> '.$args['log'].' 2>&1');
 
 // Now copy the CONF files
 exec('ln -s /usr/local/virtualizor/conf/emps/nginx.conf /usr/local/emps/etc/nginx/nginx.conf >> '.$args['log'].' 2>&1');
@@ -1430,7 +1430,7 @@ saveglobals($data, 1);
 echo "		- Fetching License\n";
 loadlicense(1);
 
-if(!file_exists($globals['path'].'/license2.php')){
+if(!file_exists($globals['path'].'/license.php')){
 	echo "	ERROR : Could not download the license file \n";
 	shell_exec('echo "ERROR : Could not download the license file" >> '.$args['log'].' 2>&1');
 	return false;
