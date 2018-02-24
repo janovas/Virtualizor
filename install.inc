@@ -1311,13 +1311,13 @@ if(preg_match('/release 7/is', $release) && (!preg_match('/kvm/is', $args['kerne
 }
 
 // Download the Package
-shell_exec('cd /root; wget -O 2.8.0.zip "http://files.virtualizor.com/2.8.0.zip'.(!empty($args['beta']) ? '&beta=1' : '').'" >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; wget -O 2.7.9.zip "http://files.virtualizor.com/2.7.9.zip'.(!empty($args['beta']) ? '&beta=1' : '').'" >> '.$args['log'].' 2>&1');
 
 // Unzip the Package
-shell_exec('cd /root; unzip -o 2.8.0.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; unzip -o 2.7.9.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
 
 // Remove the Package
-shell_exec('cd /root; /bin/rm -rf 2.8.0.zip >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; /bin/rm -rf 2.7.9.zip >> '.$args['log'].' 2>&1');
 
 // Now copy the CONF files
 exec('ln -s /usr/local/virtualizor/conf/emps/nginx.conf /usr/local/emps/etc/nginx/nginx.conf >> '.$args['log'].' 2>&1');
@@ -1358,7 +1358,7 @@ error_reporting(E_ALL & ~E_DEPRECATED);
 ///////////////////////////
 
 // Include the RAW universal.php
-include_once('_universal.php');
+include_once('universal.php');
 
 // Dont Connect!
 $globals['dbconnect'] = 1;
