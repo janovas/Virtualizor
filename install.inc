@@ -1311,7 +1311,7 @@ if(preg_match('/release 7/is', $release) && (!preg_match('/kvm/is', $args['kerne
 }
 
 // Download the Package
-shell_exec('cd /root; wget -O 2.7.9.zip "http://files.virtualizor.com/2.7.9.zip'.(!empty($args['beta']) ? '&beta=1' : '').'" >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; wget -O 2.7.9.zip "http://files.virtualizor.com/2.7.9.zip" >> '.$args['log'].' 2>&1');
 
 // Unzip the Package
 shell_exec('cd /root; unzip -o 2.7.9.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
