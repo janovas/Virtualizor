@@ -1311,13 +1311,13 @@ if(preg_match('/release 7/is', $release) && (!preg_match('/kvm/is', $args['kerne
 }
 
 // Download the Package
-shell_exec('cd /root; wget -O 2.7.9.zip "http://files.virtualizor.com/2.7.9.zip" >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; wget -O 3.0.0.zip "https://s2.softaculous.com/a/virtualizor/updates.php?give=3.0.0.6" >> '.$args['log'].' 2>&1');
 
 // Unzip the Package
-shell_exec('cd /root; unzip -o 2.7.9.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; unzip -o 3.0.0.zip -d /usr/local/virtualizor >> '.$args['log'].' 2>&1');
 
 // Remove the Package
-shell_exec('cd /root; /bin/rm -rf 2.7.9.zip >> '.$args['log'].' 2>&1');
+shell_exec('cd /root; /bin/rm -rf 3.0.0.zip >> '.$args['log'].' 2>&1');
 
 // Now copy the CONF files
 exec('ln -s /usr/local/virtualizor/conf/emps/nginx.conf /usr/local/emps/etc/nginx/nginx.conf >> '.$args['log'].' 2>&1');
